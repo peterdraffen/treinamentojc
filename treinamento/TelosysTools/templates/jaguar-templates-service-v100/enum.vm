@@ -1,0 +1,27 @@
+package ${target.javaPackageFromFolder($SRC)};
+
+${generator.generateWithExtra(
+				"${target.javaPackageFromFolder($SRC)}.${target.fileNameWithoutExtension()}" , 
+				"configuration.properties", 
+				"${RES}/META-INF", 
+				"configuration.vm",
+				"A" )}
+
+public enum ${target.fileNameWithoutExtension()} {
+    
+	;
+
+	
+    /**
+     * @return Retorna o codigo.
+     */
+	private String label;
+    
+    private ${target.fileNameWithoutExtension()} (String label) {
+    	this.label = label;
+    }
+     
+    public String getLabel() {
+        return label;
+    }
+}

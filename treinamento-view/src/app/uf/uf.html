@@ -1,0 +1,42 @@
+<div class="container-fluid">
+<form name="form" class="form-validate"  ng-controller="UfController as ufController">
+	<div class="panel .panel-default">
+		<div class=".panel-heading"> {{'label.uf.titulo' | translate }} </div>
+	</div>
+	<div class="row header" >
+
+							<div class="col-md-4">
+			<label>id</label>
+		</div>
+																<div class="col-md-4">
+			<label>nome</label>
+		</div>
+										<div class="col-md-4">
+			<label>sigla</label>
+		</div>
+													</div>
+	<div class="row" ng-repeat="uf in rows" plc-finish-render>
+	<input type="hidden" ng-model="uf.id" >
+					
+		<!--TIREI O ID PEDRO -->								
+		<div class="col-md-4">
+			<input type="text" ng-model="uf.nome" 	name="nome"	class="form-control">
+		</div>
+								
+		<div class="col-md-4">
+			<input type="text" ng-model="uf.sigla" 	name="sigla"	class="form-control">
+		</div>
+												
+		<div class="col-sd-2">
+		   	<button type="button" class="btn btn-primary" ng-click="ufController.saveRow($index);" >
+			  <i class="glyphicon glyphicon-save-file"></i>
+			</button>
+			<button type="button" class="btn btn-danger" ng-click="ufController.removeRow($index);"  ng-if="uf.id">
+			  <i class="glyphicon glyphicon-erase"></i>
+			</button>
+		</div>
+	</div>
+	<br/>
+</form>
+</div>
+																																																																

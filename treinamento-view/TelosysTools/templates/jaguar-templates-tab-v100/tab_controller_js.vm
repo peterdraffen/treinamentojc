@@ -1,0 +1,25 @@
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
+#set( $dollarSymbol= "$" )
+
+(function() {
+  'use strict';
+
+  angular.module('${PROJECT_NAME}').controller('${entity.name}Controller', ${entity.name}Controller);
+
+  /** @ngInject */
+	function ${entity.name}Controller(${dollarSymbol}scope, ${dollarSymbol}controller, ${entity.name}Service){
+	
+		var vm = this;
+		${dollarSymbol}scope.${dollarSymbol}baseService = ${entity.name}Service;
+	    ${dollarSymbol}scope.${dollarSymbol}baseRoute = '${uncapitalizedEntityName}';
+
+  		
+
+   		
+		angular.extend(vm, ${dollarSymbol}controller('PlcBaseController', {${dollarSymbol}scope: ${dollarSymbol}scope}));
+		vm.allTabular();
+  }
+
+})();
+
+

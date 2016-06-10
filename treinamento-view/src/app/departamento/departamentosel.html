@@ -1,0 +1,34 @@
+
+<div class="container-fluid" ng-controller="DepartamentoController as departamentoController"  >
+<form name="form" class="form-validate">
+	<div class="panel .panel-default">
+		<div class=".panel-heading">{{ 'label.departamento.titulo.sel' | translate }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">
+			<label>Nome:</label> <input type="text"
+				ng-model="departamentoArg.id" class="form-control">
+		</div>
+		<!--div class="col-md-2">
+			<label>Nome:</label> <input type="text"
+				ng-model="departamentoArg.nome" class="form-control">
+		</div-->
+	</div>
+
+	<br/>
+
+	<div class="row">
+		<plc-grid sref="departamento.man" />
+	</div>
+
+	<div class="form-group">
+	    <div class="col-sm-4">
+	    	<button type="button" class="btn btn-default" ng-click="departamentoController.find();" >Pesquisar</button>
+	    	<button type="button" class="btn btn-default" ng-click="departamentoController.clear();" >Limpar</button>
+	    	<button type="button" class="btn btn-default" ng-click="departamentoController.new();" >Novo</button>
+	    </div>
+	</div>
+
+</form>
+</div>

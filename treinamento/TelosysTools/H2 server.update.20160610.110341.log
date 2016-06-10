@@ -1,0 +1,34 @@
+Update date : Fri Jun 10 11:03:41 BRT 2016
+ 
+ Table 'CURRICULO' found in repository
+ (=) table 'CURRICULO' unchanged
+ 
+ Table 'CURRICULO_CONTEUDO' found in repository
+ (=) table 'CURRICULO_CONTEUDO' unchanged
+ 
+ Table 'CURSO' not found in repository
+ (+) table 'CURSO' added
+ 
+ Table 'DEPARTAMENTO' found in repository
+ (=) table 'DEPARTAMENTO' unchanged
+ 
+ Table 'DEPENDENTE' found in repository
+ (=) table 'DEPENDENTE' unchanged
+ 
+ Table 'FOTO' found in repository
+ (=) table 'FOTO' unchanged
+ 
+ Table 'FOTO_CONTEUDO' found in repository
+ (=) table 'FOTO_CONTEUDO' unchanged
+ 
+ Table 'FUNCIONARIO' found in repository
+ (=) table 'FUNCIONARIO' unchanged
+ 
+ Table 'FUNCIONARIO_CURRICULO' found in repository
+ (=) table 'FUNCIONARIO_CURRICULO' unchanged
+ 
+ Table 'HISTORICO_PROFISSIONAL' found in repository
+ (=) table 'HISTORICO_PROFISSIONAL' unchanged
+ 
+ Table 'UNIDADEFEDERATIVA' found in repository
+ (=) table 'UNIDADEFEDERATIVA' unchanged

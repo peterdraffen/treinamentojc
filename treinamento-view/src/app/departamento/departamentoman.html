@@ -1,0 +1,30 @@
+<div class="container-fluid" ng-controller="DepartamentoController as departamentoController" >
+<form name="form" class="form-validate">
+	<div class="panel .panel-default">
+		<div class=".panel-heading">{{ 'label.departamento.titulo' | translate }}</div>
+	</div>
+	<div class="row">
+<div class="col-md-4">
+				<label for="departamento_pkDepartamento">{{ 'label.departamento.pkDepartamento' | translate }}</label>
+				<input type="text" id="departamento_pkDepartamento" ng-model="departamento.pkDepartamento" name="pkDepartamento" label="{{ 'label.departamento.pkDepartamento' | translate }}" class="form-control" maxLength="20" />
+			</div>
+														<div class="col-md-4">
+				<label for="departamento_descricao">{{ 'label.departamento.descricao' | translate }}</label>
+				<input type="text" id="departamento_descricao" ng-model="departamento.descricao" name="descricao" label="{{ 'label.departamento.descricao' | translate }}" class="form-control" maxLength="100" />
+			</div>
+																<div class="col-md-4">
+				<label for="departamento_idDepartamentoPai">{{ 'label.departamento.idDepartamentoPai' | translate }}</label>
+				<input type="text" id="departamento_idDepartamentoPai" ng-model="departamento.idDepartamentoPai" name="idDepartamentoPai" label="{{ 'label.departamento.idDepartamentoPai' | translate }}" class="form-control" maxLength="20" />
+			</div>
+			</div>
+															<br/>
+	<div class="form-group">
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default" ng-click="departamentoController.new();">Novo</button>
+			<button type="submit" class="btn btn-default" ng-click="departamentoController.save();">Salvar</button>
+			<button type="button" class="btn btn-default" ng-click="departamentoController.list();">Listar</button>
+			<button type="button" class="btn btn-default" ng-click="departamentoController.remove();">Excluir</button>
+		</div>
+	</div>
+</form>
+</div>

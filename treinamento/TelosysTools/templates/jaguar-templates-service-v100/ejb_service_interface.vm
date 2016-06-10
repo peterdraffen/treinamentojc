@@ -1,0 +1,20 @@
+package ${target.javaPackageFromFolder($SRC)};
+
+import javax.ejb.Local;
+
+import com.powerlogic.jcompany.core.model.service.IPlcEntityService;
+import ${ENTITY_PKG}.${entity.name}Entity;
+
+/**
+ * EJB Service Interface for  "${entity.name}"
+ *
+ * @author jCompany Generator
+ *
+ */
+
+@Local
+public interface I${entity.name}Service extends IPlcEntityService<Long, ${entity.name}Entity> {
+   
+
+}
+

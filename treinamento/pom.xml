@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+ 	<parent>
+		<groupId>powerlogic.jaguar.jcompany</groupId>
+		<artifactId>jcompany-bom</artifactId>
+		<version>1.0.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>treinamento</artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.powerlogic</groupId>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>powerlogic.jaguar.jcompany</groupId>
+			<artifactId>jcompany-service</artifactId>
+			<version>${version.jcompany}</version>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<build>
+					<plugins>
+					  <!-- plugin>
+						    <groupId>org.codehaus.mojo</groupId>
+						    <artifactId>exec-maven-plugin</artifactId>
+						    <configuration>
+						    	<workingDirectory>\${project.basedir}\..\treinamento-view\gulp\</workingDirectory>
+						      <executable>gulp</executable>
+						      <arguments>
+						        <argument>build</argument>
+						      </arguments>
+						    </configuration>
+						    <executions>
+						      <execution>
+						        <id>build-javascript</id>
+						        <phase>generate-resources</phase>
+						        <goals>
+						          <goal>exec</goal>
+						        </goals>
+						      </execution>
+						    </executions>
+						  </plugin-->
+						<!-- PLUGIN PARA INSTALAR NPM, GULP E BUILD, CRITERIO DO CLIENTE -->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-antrun-plugin</artifactId>
+							<version>1.7</version>
+							<executions>
+								<execution>
+									<phase>generate-sources</phase>
+									<configuration>
+										<tasks>
+										<exec executable="cmd" dir="\${project.basedir}\..\treinamento-view\" osfamily="windows">
+										    <arg value="/c npm install"/>
+										  </exec>
+										 <exec executable="cmd" dir="\${project.basedir}\..\treinamento-view\" osfamily="windows">
+										    <arg value="/c bower install"/>
+										  </exec>
+										 <exec executable="cmd" dir="\${project.basedir}\..\treinamento-view\" osfamily="windows">
+										    <arg value="/c gulp clean"/>
+										  </exec>
+										 <exec executable="cmd" dir="\${project.basedir}\..\treinamento-view\" osfamily="windows">
+										    <arg value="/c gulp build"/>
+										  </exec>
+										  
+										  <exec executable="bash" dir="\${project.basedir}\..\treinamento-view\" osfamily="unix">
+											<arg value="npm install"/>
+										  </exec>
+										  <exec executable="karma start" dir="\${project.basedir}\..\treinamento-view\" osfamily="unix">
+											<arg value="bower install"/>
+										  </exec>
+										  <exec executable="karma start" dir="\${project.basedir}\..\treinamento-view\" osfamily="unix">
+											<arg value="gulp clean"/>
+										  </exec>
+										  <exec executable="karma start" dir="\${project.basedir}\..\treinamento-view\" osfamily="unix">
+										    <arg value="gulp build"/>
+										  </exec>
+										</tasks>
+									</configuration>
+									<id>prod</id>
+									<goals>
+										<goal>run</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+						<plugin>
+							<artifactId>maven-resources-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>copy-resources</id>
+									<phase>prepare-package</phase>
+									<goals>
+										<goal>copy-resources</goal>
+									</goals>
+									<configuration>
+										<outputDirectory>${basedir}/target/treinamento/</outputDirectory>
+										<resources>
+											<resource>
+												<directory>../treinamento-view/dist/</directory>
+											</resource>
+										</resources>
+									</configuration>
+								</execution>
+							<!-- execution>
+								<id>copy-resources-compile</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/treinamento/</outputDirectory>
+									<resources>
+										<resource>
+											<directory>../treinamento-view/dist/treinamento/</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution-->
+							</executions>
+						</plugin>
+					</plugins>
+					<finalName>treinamento</finalName>
+			</build>
+		</profile>
+	</profiles>
+
+	<version>0.0.1-SNAPSHOT</version>
+
+</project>

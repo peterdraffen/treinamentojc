@@ -1,0 +1,25 @@
+<div class="container-fluid" ng-controller="CursoController as cursoController" >
+<form name="form" class="form-validate">
+	<div class="panel .panel-default">
+		<div class=".panel-heading">{{ 'label.curso.titulo' | translate }}</div>
+	</div>
+	<div class="row">
+<div class="col-md-4">
+				<label for="curso_id">{{ 'label.curso.id' | translate }}</label>
+				<input type="text" id="curso_id" ng-model="curso.id" name="id" label="{{ 'label.curso.id' | translate }}" class="form-control" maxLength="20" />
+			</div>
+														<div class="col-md-4">
+				<label for="curso_nmTreinamento">{{ 'label.curso.nmTreinamento' | translate }}</label>
+				<input type="text" id="curso_nmTreinamento" ng-model="curso.nmTreinamento" name="nmTreinamento" label="{{ 'label.curso.nmTreinamento' | translate }}" class="form-control" maxLength="100" />
+			</div>
+																<br/>
+	<div class="form-group">
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default" ng-click="cursoController.new();">Novo</button>
+			<button type="submit" class="btn btn-default" ng-click="cursoController.save();">Salvar</button>
+			<button type="button" class="btn btn-default" ng-click="cursoController.list();">Listar</button>
+			<button type="button" class="btn btn-default" ng-click="cursoController.remove();">Excluir</button>
+		</div>
+	</div>
+</form>
+</div>

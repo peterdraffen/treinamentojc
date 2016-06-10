@@ -1,0 +1,23 @@
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
+#set( $dollarSymbol= "$" )
+(function() {
+  'use strict';
+
+  angular
+    .module('${PROJECT_NAME}')
+    .factory('${entity.name}Service', ${entity.name}Service);
+
+  /** @ngInject */
+  function ${entity.name}Service(PlcEntityService, ${dollarSymbol}class) {
+
+  	var Service = ${dollarSymbol}class.createClass(PlcEntityService, {
+        constructor: function() {
+            PlcEntityService.call(this, {
+                 type: '${uncapitalizedEntityName}'
+            });
+        }
+	});
+    return new Service();
+  }
+
+})();

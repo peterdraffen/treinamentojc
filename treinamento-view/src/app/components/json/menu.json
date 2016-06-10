@@ -1,0 +1,39 @@
+[
+  {
+    "text": "Menu",
+    "position": 0,
+    "heading": "true",
+    "translate": "label.menu"
+  },
+  {
+    "text": "Pagina Inicial",
+    "position": 1,
+    "sref": "app.inicial",
+    "icon": "menu-icon fa fa-tachometer",
+    "translate": "label.menu.inicial"
+  }
+		
+ , {
+    "position" : 2,
+    "sref": "uf.tab",
+    "icon": "menu-icon fa fa-compass",
+    "translate": "label.menu.uf",
+    "text": ""
+  }
+		
+ , {
+    "position" : 2,
+    "sref": "departamento.sel",
+    "icon": "menu-icon fa fa-compass",
+    "translate": "label.menu.departamento",
+    "text": ""
+  }
+		
+ , {
+    "position" : 2,
+    "sref": "curso.sel",
+    "icon": "menu-icon fa fa-compass",
+    "translate": "label.menu.curso",
+    "text": ""
+  }
+]

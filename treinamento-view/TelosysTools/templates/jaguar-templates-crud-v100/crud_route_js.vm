@@ -1,0 +1,36 @@
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
+#set( $dollarSymbol= "$" )
+
+(function() {
+	'use strict';
+
+	angular
+	.module('${PROJECT_NAME}')
+	.config(${entity.name}RouterConfig);
+
+
+	function ${entity.name}RouterConfig(${dollarSymbol}stateProvider, ${dollarSymbol}urlRouterProvider) {
+
+		${dollarSymbol}stateProvider
+		.state('${uncapitalizedEntityName}', {
+			abstract: true,
+			url: '/${uncapitalizedEntityName}',
+			templateUrl: 'app/app.html'
+		});
+
+		${dollarSymbol}stateProvider
+		.state('${uncapitalizedEntityName}.sel', {
+			url: '/${uncapitalizedEntityName}sel',
+			templateUrl: 'app/${uncapitalizedEntityName}/${uncapitalizedEntityName}sel.html'
+		});
+
+		${dollarSymbol}stateProvider
+		.state('${uncapitalizedEntityName}.man', {
+			url: '/${uncapitalizedEntityName}man/:id',
+			templateUrl: 'app/${uncapitalizedEntityName}/${uncapitalizedEntityName}man.html'
+		});
+	}
+	
+})();
+
+

@@ -1,0 +1,44 @@
+package ${target.javaPackageFromFolder($SRC)};
+
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
+import javax.servlet.http.HttpServletRequest;
+
+import com.powerlogic.jcompany.core.exception.PlcException;
+import com.powerlogic.jcompany.core.rest.auth.PlcAuthenticated;
+import com.powerlogic.jcompany.core.rest.entity.PlcAbstractEntityRest;
+import com.powerlogic.jcompany.core.rest.messages.PlcMessageIntercept;
+import ${SERVICE_INTERFACE_PKG}.I${entity.name}Service;
+import ${ENTITY_PKG}.${entity.name}Entity;
+
+/**
+ * Rest controller for  "${entity.name}"
+ *
+ * @author jCompany Generator
+ *
+ */
+
+@PlcAuthenticated
+@Path("/entity/$fn.toLowerCase(${entity.name})")
+@Produces({ MediaType.APPLICATION_JSON })
+@Consumes({ MediaType.APPLICATION_JSON })
+@PlcMessageIntercept
+public class ${entity.name}Rest extends PlcAbstractEntityRest<Long, ${entity.name}Entity, Object> {
+
+   @Inject
+   private I${entity.name}Service $fn.toLowerCase(${entity.name})Service;
+
+   @Override
+   protected I${entity.name}Service getEntityService() {
+      return $fn.toLowerCase(${entity.name})Service;
+   }
+
+}
