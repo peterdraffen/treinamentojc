@@ -1,3 +1,7 @@
 treinamento/target
+treinamento/.settings
 treinamento-view/bower_components
 treinamento-view/node_modules
+treinamento-view/dist
+treinamento-view/.settings
+treinamento-view/.tmp
