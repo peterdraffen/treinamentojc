@@ -1,10 +1,12 @@
 package br.com.powerlogic.treinamento.app.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -12,10 +14,12 @@ import javax.ws.rs.core.UriInfo;
 
 import com.powerlogic.jcompany.core.exception.PlcException;
 import com.powerlogic.jcompany.core.rest.auth.PlcAuthenticated;
+import com.powerlogic.jcompany.core.rest.auth.PlcNotAuthenticated;
 import com.powerlogic.jcompany.core.rest.entity.PlcAbstractEntityRest;
 import com.powerlogic.jcompany.core.rest.messages.PlcMessageIntercept;
 
 import br.com.powerlogic.treinamento.app.entity.CursoEntity;
+import br.com.powerlogic.treinamento.app.entity.dto.CursoDTO;
 import br.com.powerlogic.treinamento.app.service.ICursoService;
 
 /**
@@ -47,8 +51,6 @@ public class CursoRest extends PlcAbstractEntityRest<Long, CursoEntity, Object> 
 		return super.get(entityId);
 	}
 
-
-
 	@Override
 	protected ICursoService getEntityService() {
 		return cursoService;
@@ -60,4 +62,20 @@ public class CursoRest extends PlcAbstractEntityRest<Long, CursoEntity, Object> 
 		return super.save(entity);
 	}
 
+	@GET
+	@Path("/nomes")
+	@PlcNotAuthenticated
+	public List<CursoDTO> recuperaNomes() {
+		List<CursoDTO> result = new ArrayList<CursoDTO>();
+		List<CursoEntity> cursos = cursoService.findAll();
+		
+		cursos.forEach(curso -> {
+			CursoDTO dto = new CursoDTO();
+			dto.setNome(curso.getNmTreinamento());
+			result.add(dto);
+		});
+		
+		return result;
+	}
+	
 }
