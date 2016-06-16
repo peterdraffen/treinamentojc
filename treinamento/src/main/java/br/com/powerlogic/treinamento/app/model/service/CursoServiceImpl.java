@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.validation.Valid;
 
+import com.powerlogic.jcompany.commons.interceptor.validation.PlcValidationInterceptor;
 import com.powerlogic.jcompany.core.exception.PlcException;
 import com.powerlogic.jcompany.core.model.repository.IPlcEntityRepository;
 import com.powerlogic.jcompany.core.model.service.PlcAbstractServiceEntity;
@@ -22,6 +24,7 @@ import br.com.powerlogic.treinamento.app.service.ICursoService;
  */
 
 @Stateless
+@Interceptors(PlcValidationInterceptor.class)
 public class CursoServiceImpl extends PlcAbstractServiceEntity<Long,  CursoEntity> implements  ICursoService {
 
 	@Inject

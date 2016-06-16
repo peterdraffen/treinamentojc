@@ -39,7 +39,8 @@ import com.powerlogic.jcompany.core.model.entity.PlcVersionedEntity;
 // Define named queries here
 @NamedQueries ( {
     @NamedQuery(name = "CursoEntity.find", query = "SELECT o FROM CursoEntity o"),
-} )
+    @NamedQuery(name = "CursoEntity.CheckConstraintBeforeSave.unicoNome", query = "SELECT COUNT(o.id) FROM CursoEntity o WHERE o.nmTreinamento = :nmTreinamento AND o.id <> :id AND o.situacao = 'A'")
+})
 public class CursoEntity extends PlcVersionedEntity<Long> implements IPlcLogicalExclusion {
 
     private static final long serialVersionUID = 1L;

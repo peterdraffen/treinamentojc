@@ -23,6 +23,8 @@
 		-->
 		
 		<!-- GENERATOR INSERTS HERE  -->
+		<class>br.com.powerlogic.treinamento.app.entity.FuncionarioEntity</class>
+
 		<class>br.com.powerlogic.treinamento.app.entity.CursoEntity</class>
 
 		<class>br.com.powerlogic.treinamento.app.entity.CursoEntity</class>

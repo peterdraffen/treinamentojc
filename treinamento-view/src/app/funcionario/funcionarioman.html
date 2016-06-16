@@ -1,0 +1,71 @@
+<div class="container-fluid" ng-controller="FuncionarioController as funcionarioController" >
+<form name="form" class="form-validate">
+	<div class="panel .panel-default">
+		<div class=".panel-heading">{{ 'label.funcionario.titulo' | translate }}</div>
+	</div>
+	<div class="row">
+<div class="col-md-4">
+				<label for="funcionario_id">{{ 'label.funcionario.id' | translate }}</label>
+				<input type="text" id="funcionario_id" ng-model="funcionario.id" name="id" label="{{ 'label.funcionario.id' | translate }}" class="form-control" maxLength="20" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_cpf">{{ 'label.funcionario.cpf' | translate }}</label>
+				<input type="text" id="funcionario_cpf" ng-model="funcionario.cpf" name="cpf" label="{{ 'label.funcionario.cpf' | translate }}" class="form-control" maxLength="255" />
+			</div>
+														<div class="col-md-4">
+				<input type="text" id="funcionario_datanascimento" ng-model="funcionario.datanascimento" name="datanascimento" label="{{ 'label.funcionario.datanascimento' | translate }}" class="form-control" maxLength="10" />
+			</div>
+			</div>
+												<div class="row">
+<div class="col-md-4">
+				<label for="funcionario_email">{{ 'label.funcionario.email' | translate }}</label>
+				<input type="text" id="funcionario_email" ng-model="funcionario.email" name="email" label="{{ 'label.funcionario.email' | translate }}" class="form-control" maxLength="255" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_estadocivil">{{ 'label.funcionario.estadocivil' | translate }}</label>
+				<input type="text" id="funcionario_estadocivil" ng-model="funcionario.estadocivil" name="estadocivil" label="{{ 'label.funcionario.estadocivil' | translate }}" class="form-control" maxLength="1" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_nome">{{ 'label.funcionario.nome' | translate }}</label>
+				<input type="text" id="funcionario_nome" ng-model="funcionario.nome" name="nome" label="{{ 'label.funcionario.nome' | translate }}" class="form-control" maxLength="255" />
+			</div>
+			</div>
+												<div class="row">
+<div class="col-md-4">
+				<label for="funcionario_observacao">{{ 'label.funcionario.observacao' | translate }}</label>
+				<input type="text" id="funcionario_observacao" ng-model="funcionario.observacao" name="observacao" label="{{ 'label.funcionario.observacao' | translate }}" class="form-control" maxLength="255" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_sexo">{{ 'label.funcionario.sexo' | translate }}</label>
+				<input type="text" id="funcionario_sexo" ng-model="funcionario.sexo" name="sexo" label="{{ 'label.funcionario.sexo' | translate }}" class="form-control" maxLength="1" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_sithistoricoplc">{{ 'label.funcionario.sithistoricoplc' | translate }}</label>
+				<input type="text" id="funcionario_sithistoricoplc" ng-model="funcionario.sithistoricoplc" name="sithistoricoplc" label="{{ 'label.funcionario.sithistoricoplc' | translate }}" class="form-control" maxLength="255" />
+			</div>
+			</div>
+														<div class="row">
+<div class="col-md-4">
+				<label for="funcionario_temcursosuperior">{{ 'label.funcionario.temcursosuperior' | translate }}</label>
+				<input type="text" id="funcionario_temcursosuperior" ng-model="funcionario.temcursosuperior" name="temcursosuperior" label="{{ 'label.funcionario.temcursosuperior' | translate }}" class="form-control" maxLength="20" />
+			</div>
+														<div class="col-md-4">
+				<label for="funcionario_departamento">{{ 'label.funcionario.departamento' | translate }}</label>
+				<input type="text" id="funcionario_departamento" ng-model="funcionario.departamento" name="departamento" label="{{ 'label.funcionario.departamento' | translate }}" class="form-control" maxLength="20" />
+			</div>
+										<div class="col-md-4">
+				<label for="funcionario_foto">{{ 'label.funcionario.foto' | translate }}</label>
+				<input type="text" id="funcionario_foto" ng-model="funcionario.foto" name="foto" label="{{ 'label.funcionario.foto' | translate }}" class="form-control" maxLength="20" />
+			</div>
+			</div>
+															<br/>
+	<div class="form-group">
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default" ng-click="funcionarioController.new();">Novo</button>
+			<button type="submit" class="btn btn-default" ng-click="funcionarioController.save();">Salvar</button>
+			<button type="button" class="btn btn-default" ng-click="funcionarioController.list();">Listar</button>
+			<button type="button" class="btn btn-default" ng-click="funcionarioController.remove();">Excluir</button>
+		</div>
+	</div>
+</form>
+</div>

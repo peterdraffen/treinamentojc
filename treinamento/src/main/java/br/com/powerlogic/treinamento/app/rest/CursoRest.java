@@ -12,7 +12,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.powerlogic.jcompany.commons.util.message.PlcMsgUtil;
 import com.powerlogic.jcompany.core.exception.PlcException;
+import com.powerlogic.jcompany.core.messages.PlcMessageType;
 import com.powerlogic.jcompany.core.rest.auth.PlcAuthenticated;
 import com.powerlogic.jcompany.core.rest.auth.PlcNotAuthenticated;
 import com.powerlogic.jcompany.core.rest.entity.PlcAbstractEntityRest;
@@ -20,6 +22,7 @@ import com.powerlogic.jcompany.core.rest.messages.PlcMessageIntercept;
 
 import br.com.powerlogic.treinamento.app.entity.CursoEntity;
 import br.com.powerlogic.treinamento.app.entity.dto.CursoDTO;
+import br.com.powerlogic.treinamento.app.messages.AppBeanMessages;
 import br.com.powerlogic.treinamento.app.service.ICursoService;
 
 /**
@@ -38,6 +41,9 @@ public class CursoRest extends PlcAbstractEntityRest<Long, CursoEntity, Object> 
 
 	@Inject
 	private ICursoService cursoService;
+	
+	@Inject
+	private PlcMsgUtil msgUtil;
 	
 	@Override
 	public List<CursoEntity> findAll(HttpServletRequest request, UriInfo ui) throws PlcException {
@@ -58,6 +64,9 @@ public class CursoRest extends PlcAbstractEntityRest<Long, CursoEntity, Object> 
 
 	@Override
 	public CursoEntity save(CursoEntity entity) throws PlcException {
+		if (entity.getId() == null) {
+			msgUtil.msg(AppBeanMessages.APP_MENSAGEM_TAMANHO_MINIMO, PlcMessageType.WARNING, "3");
+		}
 		System.out.println("1) PASSOU REST " + entity.toString());
 		return super.save(entity);
 	}

@@ -36,4 +36,12 @@
     "translate": "label.menu.curso",
     "text": ""
   }
+		
+ , {
+    "position" : 2,
+    "sref": "funcionario.sel",
+    "icon": "menu-icon fa fa-compass",
+    "translate": "label.menu.funcionario",
+    "text": ""
+  }
 ]

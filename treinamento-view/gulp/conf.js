@@ -26,7 +26,10 @@ exports.paths = {
 exports.environment = {
 
   "ENVIRONMENT":{
-    "dev" : "http://localhost:9083/treinamento"
+    "dev" : "http://localhost:9083/treinamento",
+    "tst" : "http://tst:9083/treinamento",
+    "hom" : "http://hom:9083/treinamento",
+    "prd" : "http://prd:9083/treinamento"
   }
 
 };
